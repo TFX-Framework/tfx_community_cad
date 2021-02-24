@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>LPS - Civilian Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Lines Roleplay Police CAD. Built to facilitate the needs of roleplay police and civilians." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Codeply">
+  
+  <!-- for FF, Chrome, Opera -->
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" sizes="16x16">
+  <link rel="icon" type="image/png" href="data:image/png;base64,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" sizes="32x32">
+  <!-- for IE -->
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,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" >
+  <link rel="shortcut icon" type="image/x-icon" href="data:image/png;base64,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"/>
+  <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+  <!-- import stylesheet libraries -->
+  <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap.min.css" />
+  <link rel="stylesheet" href="/static/css/animate.min.css" />
+  <link rel="stylesheet" href="/static/css/ionicons.min.css" />
+  <link rel="stylesheet" href="/static/css/styles.css" />
+
+  <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<% include ad-header %>
+<body>
+  <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand page-scroll" href="/"><i class="ion-ios-analytics-outline"></i> Lines Police CAD</a>
+      </div>
+      <% include navbar %>
+    </div>
+  </nav>
+  
+  <header id="second" style='background-image: url("/static/images/civ-bkground.jpg");'>
+
+    <div class="header-content">
+
+      <div class="inner">
+        <h1 class="cursive"><a href="/civ-dashboard">San Andreas - Civilian Operations</a></h1>
+        
+        <!-- imports the community specific alerts -->
+        <% include community-alerts %>
+        
+        <div class="col-lg-10 col-lg-offset-1 text-center">
+          <button data-toggle="modal" href="#newCivModal"  class="btn btn-primary btn-lg margin-top-2">Add New Civilian</button>
+          <button data-toggle="modal" href="#newVehicleModal"  class="btn btn-primary btn-lg margin-top-2" onclick="generateSerialNumber(17, 'vin')">Add New Vehicle</button>
+          <button data-toggle="modal" href="#newFirearmModal"  class="btn btn-primary btn-lg margin-top-2" onclick="generateSerialNumber(8, 'serial-number')">Register Firearm</button>
+          <a href="/map-interactive" class="btn btn-primary btn-lg margin-top-2">Map</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section style='background-image: url("/static/images/blue-clouds.jpg");'>
+    <div class="container">
+      <!--Table for Personas  -->
+      <div class="col-md-12 col-md-offset-0.75">
+        <div class="margin-bottom-2">
+          <span id="active-bolos margin-right-1" style="font-size: 18px;">Civilians:</span> <button data-toggle="modal" href="#newCivModal"  class="btn btn-primary btn-md pull-right">Add New Civilian</button>
+        </div>
+          <div>
+            <label>Search:
+              <input id="civilian-search" type="search" class="form-control input-sm" placeholder aria-controls="thumbnail">
+            </label>
+             <ion-icon id="app-icon-personas" name="apps-outline" class="color-white table-icon" onclick="showApps()"></ion-icon> <ion-icon id="list-icon-personas" name="list-outline" class="color-white table-icon" onclick="showList()"></ion-icon>
+          </div>
+          <div id="personas-thumbnail" class="row" style="margin-top: 0.5em;">
+            <% for(var i=0; i<personas.length; i++) {%>
+            <div class="col-xs-6 col-sm-3 col-md-2 text-align-center civ-thumbnails">
+              <div class="thumbnail thumbnail-box" data-toggle="modal" data-id="<%=i%>" data-target="#viewCiv" onclick="loadCivData('<%=i%>');loadTicketsAndWarnings('<%=personas[i]._id%>');loadArrests('<%=personas[i]._id%>');loadReports('<%=personas[i]._id%>');loadMedications('<%=personas[i]._id%>');loadConditions('<%=personas[i]._id%>')">
+                <ion-icon class="font-size-4-vmax" name="person-outline"></ion-icon>
+                <div class="caption">
+                  <h4 class="color-white"><%= personas[i].civilian.firstName%> <%= personas[i].civilian.lastName%></h4>
+                  <h5 class="color-white"><%= personas[i].civilian.birthday%></h5>
+                </div>
+              </div>
+            </div>
+            <% } %>
+          </div>
+          <div id="personas-table-div">
+          <table id="personas-table" class="table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Civilian Name</th>
+                <th>Date of Birth</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(var j=0; j<personas.length; j++) {%>
+                <tr data-toggle="modal" data-id="<%=j%>" data-target="#viewCiv" onclick="loadCivData('<%=j%>');loadTicketsAndWarnings('<%=personas[j]._id%>');loadArrests('<%=personas[j]._id%>');loadReports('<%=personas[j]._id%>');loadMedications('<%=personas[j]._id%>');loadConditions('<%=personas[j]._id%>')">
+                  <td><%= personas[j].civilian.firstName%> <%= personas[j].civilian.lastName%></td>
+                  <td><%= personas[j].civilian.birthday%></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+      </div>
+    </div>
+    <hr class="margin-top-1" style="width: 88%;max-width: 100rem;">
+<!--Table for Vehicles  -->
+<div class="col-md-12 col-md-offset-0.75 margin-top-2">
+  <div class="margin-bottom-1">
+    <span id="active-bolos" class="margin-right-1" style="font-size: 18px;">Vehicles:</span> <button data-toggle="modal" href="#newVehicleModal"  class="btn btn-primary btn-md pull-right">Add New Vehicle</button>
+  </div>
+  <div>
+    <label>Search:
+      <input id="vehicle-search" type="search" class="form-control input-sm" placeholder aria-controls="thumbnail">
+    </label>
+    <ion-icon id="app-icon-vehicles" name="apps-outline" class="color-white table-icon" onclick="showVehicleApps()"></ion-icon> <ion-icon id="list-icon-vehicles" name="list-outline" class="color-white table-icon" onclick="showVehicleList()"></ion-icon>
+  </div>
+  <div id="vehicles-thumbnail" class="row" style="margin-top: 0.5em;">
+    <% for(var i=0; i<vehicles.length; i++) {%>
+    <div class="col-xs-6 col-sm-3 col-md-2 text-align-center veh-thumbnails">
+      <div class="thumbnail thumbnail-box" data-toggle="modal" data-id='<%=i%>' data-target="#viewVeh" onclick="loadVehData('<%=i%>')">
+        <ion-icon class="font-size-4-vmax" name="car-sport-outline"></ion-icon>
+        <div class="caption">
+          <h4 class="color-white license-plate">#<%= vehicles[i].vehicle.plate%>)</h4>
+          <h5 class="color-white"><%= vehicles[i].vehicle.color%></td> <%= vehicles[i].vehicle.model%></h5>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div id="vehicles-table-div">
+    <table id="vehicle-table" class="table table-hover table-bordered">
+      <thead>
+        <tr><th>Plate</th><th>Model</th><th>Color</th></tr>
+      </thead>
+        <tbody>
+          <% for(var i=0; i<vehicles.length; i++) {%>
+          <tr class="gray-hover" data-toggle="modal" data-id=<%=i%> data-target="#viewVeh" onclick="loadVehData(<%=i%>)">
+            <td><%= vehicles[i].vehicle.plate%></td>
+            <td> <%= vehicles[i].vehicle.model%></td>
+            <td> <%= vehicles[i].vehicle.color%></td>
+          </tr>
+          <% } %>
+        </tbody>
+    </table>
+  </div>
+</div>
+<hr class="margin-top-1" style="width: 88%;max-width: 100rem;">
+<!--Table for Firearms  -->
+<div class="col-md-12 col-md-offset-0.75 margin-top-2">
+  <div class="margin-bottom-1">
+    <span id="active-bolos margin-right-1" style="font-size: 18px;">Firearms:</span> <button data-toggle="modal" href="#newFirearmModal"  class="btn btn-primary btn-md pull-right" onclick="generateSerialNumber(8, 'serial-number')">Register Firearm</button>
+  </div>
+  <div>
+    <label>Search:
+      <input id="firearm-search" type="search" class="form-control input-sm" placeholder aria-controls="thumbnail">
+    </label>
+    <ion-icon id="app-icon-firearms" name="apps-outline" class="color-white table-icon" onclick="showFirearmsApps()"></ion-icon> <ion-icon id="list-icon-firearms" name="list-outline" class="color-white table-icon" onclick="showFirearmsList()"></ion-icon>
+  </div>
+  <div id="firearms-thumbnail" class="row" style="margin-top: 0.5em;">
+    <% for(var i=0; i<firearms.length; i++) {%>
+    <div class="col-xs-6 col-sm-3 col-md-2 text-align-center firearm-thumbnails">
+      <div class="thumbnail thumbnail-box" data-toggle="modal" data-id='<%=i%>' data-target="#viewFirearm" onclick="loadFirearmData('<%=i%>')">
+        <span class="iconify font-size-4-vmax" data-icon="mdi:pistol" data-inline="false"></span>
+        <div class="caption">
+          <h4 class="color-white" style="font-family: dealerplatecalifornia;"><%= firearms[i].firearm.serialNumber%></h4>
+          <h5 class="color-white" style="text-transform: capitalize;"><%= firearms[i].firearm.weaponType%></h5>
+          <p class="color-white" style="font-size: 12px;"><%= firearms[i].firearm.registeredOwner%></p>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </div>
+  <div id="firearms-table-div">
+    <table id="firearm-table" class="table table-hover table-bordered">
+      <thead>
+        <tr><th>Serial #</th><th>Type</th><th>Registered to</th></tr>
+      </thead>
+        <tbody>
+          <% for(var i=0; i<firearms.length; i++) {%>
+          <tr class="gray-hover" data-toggle="modal" data-id=<%=i%> data-target="#viewFirearm" onclick="loadFirearmData(<%=i%>)">
+            <td><%= firearms[i].firearm.serialNumber%></td>
+            <td style="text-transform: capitalize;"> <%= firearms[i].firearm.weaponType%></td>
+            <td> <%= firearms[i].firearm.registeredOwner%></td>
+          </tr>
+          <% } %>
+        </tbody>
+    </table>
+  </div>
+</div>
+
+    </div>
+  </section>
+  <% include footer %>
+  <div id="galleryModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <img src="" id="galleryImage" class="img-responsive" />
+          <p>
+            <br/>
+            <button class="btn btn-primary btn-lg center-block" data-dismiss="modal" aria-hidden="true">Close <i class="ion-android-close"></i></button>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="newCivModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/create-civ" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="createNewCiv()">X</button>
+            <h4>Add a New Civilian</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="civ-first-name">Civilian First Name</label>
+              <div class="col-md-4">
+                <input id="civ-first-name" name="civFirstName" type="text" placeholder="First Name" class="form-control input-md" data-trigger="first-name-popover" data-content="* First name cannot contain spaces." required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="civ-last-name">Civilian Last Name</label>
+              <div class="col-md-4">
+                <input id="civ-last-name" name="civLastName" type="text" placeholder="Last Name" class="form-control input-md" data-trigger="last-name-popover" data-content="* Last name cannot contain spaces." required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="birthday">Date of Birth</label>
+              <div class="col-md-4">
+              <input id="birthday" name="birthday" type="date" max="2999-12-31" min="1900-01-01" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="address">Address</label>
+              <div class="col-md-4">
+                <input id="address" name="address" type="text" placeholder="Address (optional)" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="occupation">Job</label>
+              <div class="col-md-4">
+                <input id="occupation" name="occupation" type="text" placeholder="Occupation (optional)" class="form-control input-md">
+              </div>
+            </div>
+
+            <!-- Checkbox -->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="license-status">Create Drivers License?</label>
+              <div class="col-md-1">
+                <input id="license-status" type="checkbox" name="licenseStatus" class="form-control" checked>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="firearmLicense">Firearm License:</label>
+              <div class="col-md-4">
+                <select id="firearmLicense" name="firearmLicense" class="form-control">
+                  <option value="1">None</option>
+                  <option value="2">Valid</option>
+                  <option value="3">Revoked</option>
+                </select>
+              </div>
+            </div>
+
+            
+
+            
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit-new-civ"></label>
+              <div class="col-md-4">
+                <input type="hidden" name="userID" value="<%= user._id %>">
+                <input type="hidden" id="new-civ-activeCommunityID-new-civ" name="activeCommunityID", value="<%=user.user.activeCommunity%>">
+                <button id="submit-new-civ" class="btn btn-primary" onclick="createNewCiv()">Create</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="newVehicleModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/create-vehicle" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Add a New Vehicle</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="vin">Vin #</label>
+              <div class="col-md-4">
+                <input id="vin" name="vin" type="text" minlength="17" maxlength="17" class="form-control input-md disabled-color" required readonly="readonly">
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-info btn-md" onclick="generateSerialNumber(17, 'vin')">Regenerate</button>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="plate">Plate</label>
+              <div class="col-md-4">
+                <input id="plate" name="plate" type="text" maxlength="8" placeholder="Plate" class="form-control input-md" required="">
+              </div>
+            </div>
+
+            <!-- Search input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="model">Model</label>
+              <div class="col-md-4">
+                <input id="model" name="model" type="search" placeholder="Model" class="form-control input-md" required="">
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="color">Color</label>
+              <div class="col-md-4">
+              <input id="color" name="color" type="text" placeholder="Color" class="form-control input-md" required="">
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="valid-registration">Valid Registration?</label>
+              <div class="col-md-4">
+                <select id="valid-registration" name="validRegistration" class="form-control">
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="valid-insurance">Valid Insurance</label>
+              <div class="col-md-4">
+                <select id="valid-insurance" name="validInsurance" class="form-control">
+                  <option value="1">Yes</option>
+                  <option value="2">No</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Search input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="registeredOwner">Registered Owner</label>
+              <div class="col-md-4">
+                <select id="registeredOwner-new-veh" name="registeredOwner" class="form-control">
+                  <option value="N/A">N/A</option>
+                  <% for(var i=0; i<personas.length; i++) {%>
+                    <option value="<%= personas[i]._id %>+<%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%>"><%=i+1%>) <%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%></option>
+                   <% } %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="isStolen">Marked Stolen?</label>
+              <div class="col-md-4">
+                <select id="is-stolen-new" name="isStolen" class="form-control">
+                  <option value="1">No</option>
+                  <option value="2">Yes</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="create-vehicle"></label>
+              <div class="col-md-4">
+                <input type="hidden" name="userID" value="<%= user._id %>">
+                <input type="hidden" id="new-veh-activeCommunityID-new-veh" name="activeCommunityID" value="<%=user.user.activeCommunity%>">
+                <button id="create-vehicle" class="btn btn-primary">Create</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="newFirearmModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/create-firearm" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Add a New Firearm</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="serial-number">Serial Number</label>
+              <div class="col-md-4">
+                <input id="serial-number" name="serialNumber" type="text" minlength="8" maxlength="8" placeholder="serial number" class="form-control input-md" required="" readonly="readonly">
+              </div>
+              <div class="col-md-4">
+                <button type="button" class="btn btn-info btn-md" onclick="generateSerialNumber(8, 'serial-number')">Regenerate</button>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="weapon-type">Weapon Type</label>
+              <div class="col-md-4">
+                <select id="weapon-type" name="weaponType" class="form-control">
+                  <option value="pistol">Pistol</option>
+                  <option value="revolver">Revolver</option>
+                  <option value="shotgun">Shotgun</option>
+                  <option value="submachine gun">Submachine Gun</option>
+                  <option value="light machine gun">Light Machine Gun</option>
+                  <option value="assault rifle">Assault Rifle</option>
+                  <option value="sniper rifle">Sniper Rifle</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Search input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="registeredOwner">Registered Owner</label>
+              <div class="col-md-4">
+                <select id="registeredOwner-new-firearm" name="registeredOwner" class="form-control">
+                  <option value="N/A">N/A</option>
+                  <% for(var i=0; i<personas.length; i++) {%>
+                    <option value="<%= personas[i]._id %>+<%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%>"><%=i+1%>) <%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%></option>
+                   <% } %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="isStolen">Marked Stolen?</label>
+              <div class="col-md-4">
+                <select id="is-stolen-update" name="isStolen" class="form-control">
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="create-firearm"></label>
+              <div class="col-md-4">
+                <input type="hidden" name="userID" value="<%= user._id %>">
+                <input type="hidden" id="new-veh-activeCommunityID-new-firearm" name="activeCommunityID" value="<%=user.user.activeCommunity%>">
+                <button id="create-firearm" class="btn btn-primary">Create</button>
+              </div>
+            </div>
+            </fieldset>
+            </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="addMedicationModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/create-medication" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="createNewCiv()">X</button>
+            <h4>Add a New Medication</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="startDate">Start Date</label>
+              <div class="col-md-4">
+              <input id="startDate" name="startDate" type="date" max="2999-12-31" min="1900-01-01" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="medicationName">Medication Name</label>
+              <div class="col-md-4">
+                <input id="medicationName" name="name" type="text" placeholder="medication name" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="dosage">Dosage</label>
+              <div class="col-md-4">
+                <input id="dosage" name="dosage" type="text" placeholder="dosage (e.g. 2 pills)" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="frequency">Frequency of Dosage</label>
+              <div class="col-md-4">
+                <input id="frequency" name="frequency" type="text" placeholder="frequency (e.g. twice a day)" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit-new-civ"></label>
+              <div class="col-md-4">
+                <input type="hidden" id="medication-civilian-id" name="civilianID" value="">
+                <input type="hidden" id="medication-civ-first-name" name="firstName" value="">
+                <input type="hidden" id="medication-civ-last-name" name="lastName" value="">
+                <input type="hidden" id="medication-civ-date-of-birth" name="dateOfBirth" value="">
+                <input type="hidden" name="userID" value="<%= user._id %>">
+                <input type="hidden" id="new-civ-activeCommunityID-add-medication" name="activeCommunityID", value="<%=user.user.activeCommunity%>">
+                <button id="submit-new-civ-add-med" class="btn btn-primary" onclick="createNewCiv()">Create</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="addConditionModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/create-condition" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Add a New Medication</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="dateOccurred">Date Occurred</label>
+              <div class="col-md-4">
+              <input id="dateOccurred" name="dateOccurred" type="date" max="2999-12-31" min="1900-01-01" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="conditionName">Condition Name</label>
+              <div class="col-md-4">
+                <input id="conditionName" name="name" type="text" placeholder="condition name" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="details">Details</label>
+              <div class="col-md-4">
+                <input id="details" name="details" type="text" placeholder="details" class="form-control input-md" required>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="submit-new-civ"></label>
+              <div class="col-md-4">
+                <input type="hidden" id="condition-civilian-id" name="civilianID" value="">
+                <input type="hidden" id="condition-civ-first-name" name="firstName" value="">
+                <input type="hidden" id="condition-civ-last-name" name="lastName" value="">
+                <input type="hidden" id="condition-civ-date-of-birth" name="dateOfBirth" value="">
+                <input type="hidden" name="userID" value="<%= user._id %>">
+                <input type="hidden" id="new-civ-activeCommunityID-add-condition" name="activeCommunityID", value="<%=user.user.activeCommunity%>">
+                <button id="submit-new-civ-add-cond" class="btn btn-primary">Create</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewCiv" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/updateOrDeleteCiv" method="POST">
+          <fieldset>
+
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="clearHelpText()">X</button>
+            <h4>Details about your Civilian</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="civilianIDView">ID #:</label>
+              <div class="col-md-4">
+                <label id="civilianIDView" class="form-label uppercase"></label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="firstName">First Name:</label>
+              <div class="col-md-4">
+                <input id="firstName" name="firstName" type="text" placeholder="First Name" class="form-control input-md" data-trigger="first-name-popover" data-content="* First name cannot contain spaces." required="">
+              </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="lastNameView">Last Name:</label>
+            <div class="col-md-4">
+              <input id="lastName" name="lastName" type="text" placeholder="Last Name" class="form-control input-md" data-trigger="last-name-popover" data-content="* Last name cannot contain spaces." required="">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="birthdayView">Date of Birth</label>
+            <div class="col-md-4">
+              <input id="delBirthday" name="birthday" type="date" max="2999-12-31" min="1900-01-01" class="form-control input-md" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="addressView">Address:</label>
+            <div class="col-md-4">
+              <textarea id="addressView" name="address" type="text" placeholder="Address" class="form-control input-md uppercase"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="occupationView">Occupation:</label>
+            <div class="col-md-4">
+              <input id="occupationView" name="occupation" type="text" placeholder="Occupation" class="form-control input-md capitalize">
+            </div>
+          </div>
+
+          <div class="col-md-12 text-align-center margin-bottom-1">
+            <input type="hidden" id="civilianID" name="civilianID">
+            <button type="submit" value="update" name="action" class="btn btn-info" onclick="clearHelpText()">Update Civilian</button>
+            <button type="submit" value="delete" name="action" class="btn btn-danger" onclick="clearHelpText()">Delete Civilian</button>
+          </div>
+
+          <hr style="width: 88%;max-width: 100rem;">
+          <h5><ion-icon name="browsers-outline"></ion-icon> Drivers License</h5>
+
+            <!-- Drivers License -->
+            <div id="drivers-license" class="row">
+              <div class="col-md-12">
+            <div class="container col-sm-offset-2 col-md-offset-2" style="position: relative; margin-bottom: -130px;">
+              <img src="/static/images/id-license.png" style="width: 301px; height: 186px;">
+
+              <label style="position: absolute;
+              font-family: 'Abril Fatface', cursive;
+              top: 4px;
+              left: 38px;
+              color: #00aced;
+              font-size: 17px;"></label>
+              <label style="position: absolute;
+              font-family: 'Signika', sans-serif;
+              top: 8px;
+              left: 206px;
+              color: #00aced;
+              font-size: 12px;"></label>
+              <!-- <hr style="position: absolute;
+              top: 9px;
+              left: 15px;
+              color: black;
+              opacity: 0.5;
+              width: 301px;
+              max-width: unset;"> -->
+              <!-- drivers license # -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <label id="civilianIDViewLic" style="position: absolute;
+                  bottom: 0px;
+                  left: 25px;
+                  font-weight: 100;
+                  color: black;
+                  font-size: 14px;
+                  text-transform: uppercase;
+                  font-family: 'Signika', sans-serif;" class="form-label"></label>
+                </div>
+              </div>
+
+              <!-- expiration date -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <label style="position: absolute;
+                  bottom: 146px;
+                  left: 25px;
+                  color: black;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;" class="form-label"><span style="color: #00aced">EXP </span><span id="license-expiration"></span></label>
+                </div>
+              </div>
+
+              <!-- last name -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <span style="position: absolute;
+                  bottom: 150px;
+                  left: 25px;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;
+                  color: #00aced">LN </span>
+                  <span id="lastNameLic" style="position: absolute;
+                  bottom: 152px;
+                  left: 46px;
+                  width: 174px;
+                  height: 18px;
+                  padding: 0px;
+                  background: transparent;
+                  color: black;
+                  border: none;
+                  font-family: 'Signika', sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  text-transform: uppercase;"></span>
+                </div>
+              </div>
+
+              <!-- first name -->
+              <div class="form-group"> 
+                <div>
+                  <span style="position: absolute;
+                  bottom: 227px;
+                  left: 25px;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;
+                  color: #00aced">FN </span>
+                  <span id="firstNameLic" style="position: absolute;
+                  bottom: 229px;
+                  left: 46px;
+                  width: 174px;
+                  height: 18px;
+                  padding: 0px;
+                  background: transparent;
+                  color: black;
+                  border: none;
+                  font-family: 'Signika', sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  text-transform: uppercase;"></span>
+                </div>
+              </div>
+
+              <!-- address -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <span id="addressViewLic" style="position: absolute;
+                  bottom: 136px;
+                  width: 219px;
+                  left: 26px;
+                  line-height: 14px;
+                  background: transparent;
+                  color: black;
+                  border: none;
+                  font-family: 'Signika', sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  text-transform: uppercase;"></span>
+                </div>
+              </div>
+
+              <!-- dob -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <span style="position: absolute;
+                  bottom: 131px;
+                  left: 25px;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;
+                  color: #00aced">DOB </span>
+                  <span id="birthdayViewLic" style="position: absolute;
+                  bottom: 131px;
+                  left: 57px;
+                  background: transparent;
+                  color: black;
+                  border: none;
+                  font-family: 'Signika', sans-serif;
+                  font-size: 15px;
+                  font-weight: 500;"></span>
+                </div>
+              </div>
+
+              <!-- license status -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <span style="position: absolute;
+                  bottom: 131px;
+                  left: 25px;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;
+                  color: #00aced">STATUS </span>
+                  <span id="licenseStatusViewLic" style="position: absolute;
+                  bottom: 131px;
+                  left: 75px;
+                  background: transparent;
+                  border: none;
+                  font-family: 'Signika', sans-serif;
+                  font-size: 14px;
+                  font-weight: 500;
+                  text-transform: uppercase;" class="color-black">
+                </span>
+                </div>
+              </div>
+
+              <!-- issued date -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <label style="position: absolute;
+                  bottom: 241px;
+                  left: 210px;
+                  color: black;
+                  font-size: 14px;
+                  font-family: 'Signika', sans-serif;
+                  font-weight: 500;" class="form-label"><span style="color: #00aced">ISS </span><span id="license-issued"></span></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+
+          <!-- Create Drivers License Button -->
+          <div class="form-group">
+            <label class="col-md-4 control-label" for="click-to-create-lic"></label>
+            <div class="col-md-4">
+              <button id="click-to-create-lic" type="submit" value="createLicense" name="action" class="btn btn-secondary color-black hide" onclick="clearHelpText()">Create Driver's License</button>
+            </div>
+          </div>
+
+          <!-- Delete Drivers License Button -->
+          <div class="form-group col-md-12 text-align-center">
+              <button id="click-to-delete-lic" type="submit" value="deleteLicense" name="action" class="btn btn-danger hide" onclick="clearHelpText()">Delete Driver's License</button>
+          </div>
+
+          <hr style="width: 88%;max-width: 100rem;">
+          <h5><ion-icon name="browsers-outline"></ion-icon> Firearm License</h5>
+
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="firearmLicenseView">Firearm License:</label>
+              <div class="col-md-4">
+                <select id="firearmLicenseView" name="firearmLicense" class="form-control" selected="selected">
+                  <option value="1">None</option>
+                  <option value="2">Valid</option>
+                  <option value="3">Revoked</option>
+                </select>
+              </div>
+            </div>
+
+            
+            </fieldset>
+          </form>
+          <hr style="width: 88%;max-width: 100rem;">
+          <h4>Criminal History</h4>
+          <ul class="nav nav-pills mb-3 margin-bottom-1" id="pills-tab" role="tablist">
+            <li class="nav-item active">
+              <a class="nav-link active" id="pills-citations-tab" data-toggle="pill" href="#pills-citations" role="tab" aria-controls="pills-citations" aria-selected="true">Citations</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-warnings-tab" data-toggle="pill" href="#pills-warnings" role="tab" aria-controls="pills-warnings" aria-selected="false">Warnings</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-arrests-tab" data-toggle="pill" href="#pills-arrests" role="tab" aria-controls="pills-arrests" aria-selected="false">Arrests</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade active in" id="pills-citations" role="tabpanel" aria-labelledby="pills-citations-tab">
+                <table id="citationTable" class="table table-hover" border="1" frame="box">
+                  <thead>
+                    <tr style="background-color: #2d2d2d;"><td>Date<br><i><small>YYYY-M-D</small></i></td><td>Violation</td><td>Amount</td></tr>
+                  </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="tab-pane fade" id="pills-warnings" role="tabpanel" aria-labelledby="pills-warnings-tab">
+              <table id="warningTable" class="table table-hover" border="1" frame="box">
+                <thead>
+                  <tr style="background-color: #2d2d2d;"><td>Date<br><i><small>YYYY-M-D</small></i></td><td>Warning</td></tr>
+                </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="pills-arrests" role="tabpanel" aria-labelledby="pills-arrests-tab">
+              <table id="arrestTable" class="table table-hover" border="1" frame="box">
+                <thead>
+                  <tr style="background-color: #2d2d2d;"><td>Date<br><i><small>YYYY-M-D</small></i></td><td>Arrest Charges</td><td>Summary</td></tr>
+                </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+            </div>
+          </div>
+          <hr style="width: 88%;max-width: 100rem;">
+          <h4>Medical History</h4>
+          <ul class="nav nav-pills mb-3 margin-bottom-1" id="pills-tab" role="tablist">
+            <li class="nav-item active">
+              <a class="nav-link active" id="pills-reports-tab" data-toggle="pill" href="#pills-reports" role="tab" aria-controls="pills-reports" aria-selected="true">Reports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-medications-tab" data-toggle="pill" href="#pills-medications" role="tab" aria-controls="pills-medications" aria-selected="false">Medications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="pills-pre-existing-conditions-tab" data-toggle="pill" href="#pills-pre-existing-conditions" role="tab" aria-controls="pills-pre-existing-conditions" aria-selected="false">Pre-Existing Conditions</a>
+            </li>
+          </ul>
+          <div class="tab-content" id="pills-tabContent">
+            <div class="tab-pane fade active in" id="pills-reports" role="tabpanel" aria-labelledby="pills-reports-tab">
+              <table id="reportsTable" class="table" border="1" frame="box">
+                <thead>
+                  <tr style="background-color: #2d2d2d;"><td>Date<br><i><small>YYYY-M-D</small></i></td><td>Hospitalized<br><i><small>Y/N</small></i></td><td>Summary</td><td>Delete</td></tr>
+                </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="pills-medications" role="tabpanel" aria-labelledby="pills-medications-tab">
+              <button data-toggle="modal" href="#addMedicationModal" class="btn btn-info"><span><i class="glyphicon glyphicon-plus"></i></span> Add Medication</button>
+              <br/><br/>
+              <table id="medicationsTable" class="table" border="1" frame="box">
+                <thead>
+                  <tr style="background-color: #2d2d2d;"><td>Start Date<br><i><small>YYYY-M-D</small></i></td><td>Name</td><td>Dosage</td><td>Frequency</td><td>Delete</td></tr>
+                </thead>
+                  <tbody></tbody>
+              </table>
+            </div>
+            <div class="tab-pane fade" id="pills-pre-existing-conditions" role="tabpanel" aria-labelledby="pills-pre-existing-conditions-tab">
+              <button data-toggle="modal" href="#addConditionModal" class="btn btn-info"><span><i class="glyphicon glyphicon-plus"></i></span> Add Condition</button>
+              <br/><br/>
+              <table id="conditionsTable" class="table" border="1" frame="box">
+                <thead>
+                  <tr style="background-color: #2d2d2d;"><td>Date Occurred<br><i><small>YYYY-M-D</small></i></td><td>Name</td><td>Details</td><td>Delete</td></tr>
+                </thead>
+                  <tbody>
+                  </tbody>
+              </table>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewVeh" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <form class="form-horizontal" action="/updateOrDeleteVeh" method="post">
+              <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Details about your Vehicle</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="vinVeh">Vin #</label>
+              <div class="col-md-4">
+                <input id="vinVeh" name="vinVeh" type="text" minlength="17" maxlength="17" class="form-control input-md disabled-color" required readonly="readonly">
+              </div>
+              <div id="no-existing-vin" class="col-md-4">
+                <button type="button" class="btn btn-info btn-md" onclick="generateSerialNumber(17, 'vinVeh')">Generate</button>
+              </div>
+            </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="plate">Plate:</label>
+                <div class="col-md-4">
+                  <input id="plateVeh" name="plateVeh" type="text" maxlength="8" placeholder="Plate" class="form-control input-md" required="">
+                </div>
+              </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="model">Model:</label>
+                <div class="col-md-4">
+                  <input id="modelVeh" name="modelVeh" type="search" placeholder="Model" class="form-control input-md" required="">
+                </div>
+              </div>
+
+            <div class="form-group required">
+                <label class="col-md-4 control-label" for="colorView">Color:</label>
+                <div class="col-md-4">
+                  <input id="colorView" name="colorView" type="text" placeholder="Color" class="form-control input-md" required="">
+                </div>
+              </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="valid-registration">Valid Registration?</label>
+                <div class="col-md-4">
+                  <select id="validRegView" name="validRegView" class="form-control" selected="selected">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                  </select>
+                </div>
+              </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="validInsView">Valid Insurance?</label>
+                <div class="col-md-4">
+                  <select id="validInsView" name="validInsView" class="form-control" selected="selected">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                  </select>
+                </div>
+              </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="roVeh">Registered Owner:</label>
+                <div class="col-md-4">
+                  <select id="roVeh" name="roVeh" class="form-control" selected="selected">
+                    <option value="N/A">N/A</option>
+                    <% for(var i=0; i<personas.length; i++) {%>
+                      <option value="<%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%>"><%=i+1%>) <%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%></option>
+                     <% } %>
+                  </select>
+                </div>
+              </div>
+
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="stolenView">Marked Stolen?</label>
+                <div class="col-md-4">
+                  <select id="stolenView" name="stolenView" class="form-control" selected="selected">
+                    <option value="1">No</option>
+                    <option value="2">Yes</option>
+                  </select>
+                </div>
+              </div>
+
+            <div class="col-md-12 text-align-center">
+                <input type="hidden" id="vehicleID" name="vehicleID">
+                <button type="submit" value="update" name="action" class="btn btn-info">Update Vehicle</button>
+                <button type="submit" value="delete" name="action" class="btn btn-danger">Delete Vehicle</button>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="viewFirearm" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <form class="form-horizontal" action="/updateOrDeleteFirearm" method="post">
+              <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Firearm Details</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="serial-number">Serial Number</label>
+              <div class="col-md-6">
+                <input id="serial-number-details" name="serialNumber" type="text" minlength="8" maxlength="8" placeholder="serial number" class="form-control input-md" required="" readonly="readonly">
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group required">
+              <label class="col-md-4 control-label" for="weapon-type">Weapon Type</label>
+              <div class="col-md-6">
+                <select id="weapon-type-details" name="weaponType" class="form-control">
+                  <option value="pistol">Pistol</option>
+                  <option value="revolver">Revolver</option>
+                  <option value="shotgun">Shotgun</option>
+                  <option value="submachine gun">Submachine Gun</option>
+                  <option value="light machine gun">Light Machine Gun</option>
+                  <option value="assault rifle">Assault Rifle</option>
+                  <option value="sniper rifle">Sniper Rifle</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Search input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="registeredOwner">Registered Owner</label>
+              <div class="col-md-6">
+                <select id="registeredOwner-details" name="registeredOwner" class="form-control">
+                  <option value="N/A">N/A</option>
+                  <% for(var i=0; i<personas.length; i++) {%>
+                    <option value="<%= personas[i]._id %>+<%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%>"><%=i+1%>) <%= personas[i].civilian.firstName %> <%= personas[i].civilian.lastName%> | DOB: <%=personas[i].civilian.birthday%></option>
+                   <% } %>
+                </select>
+              </div>
+            </div>
+
+            <!-- Select Basic -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="isStolen">Marked Stolen?</label>
+              <div class="col-md-6">
+                <select id="is-stolen-details" name="isStolen" class="form-control">
+                  <option value="false">No</option>
+                  <option value="true">Yes</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-md-12 text-align-center">
+                <input type="hidden" id="firearmID" name="firearmID">
+                <button type="submit" value="update" name="action" class="btn btn-info">Update Firearm</button>
+                <button type="submit" value="delete" name="action" class="btn btn-danger">Delete Firearm</button>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="communitiesModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <% include community-management %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="joinCommunityModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/joinCommunity" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="createNewCiv()">X</button>
+            <h4>Join an Existing Community</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="communityCode">Community Code:</label>
+              <div class="col-md-4">
+              <input id="communityCode" name="communityCode" style="text-transform: uppercase;" type="text" placeholder="Example: YRFGHHP" class="form-control input-md" minlength="7" maxlength="7" required>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="joinCommunity"></label>
+              <div class="col-md-4 text-align-center">
+                <button id="joinCommunity" value="<%= user._id %>" name="userID"  class="btn btn-primary" onclick="createNewCiv()">Join</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="leaveActiveCommunityModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/leaveActiveCommunity" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h4>Leave Active Community</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <p>NOTE: All civilians and vehicles that you created in this community will no longer 
+              show up on your dashboard after you leave.
+            </p>
+            <p>Are you sure you want to leave this community?</p>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="leaveActiveCommunity"></label>
+              <div class="col-md-4 text-align-center">
+                <button id="leaveActiveCommunity" value="<%= user._id %>" name="userID"  class="btn btn-danger">Leave</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="createCommunityModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <form class="form-horizontal" action="/createCommunity" method="post">
+            <fieldset>
+
+            <!-- Form Name -->
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="createNewCiv()">X</button>
+            <h4>Create a New Community</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="communityName">Community Name:</label>
+              <div class="col-md-4">
+              <input id="communityName" name="communityName" style="text-transform: capitalize;" type="text" placeholder="Community Name" class="form-control input-md" maxlength="25" required>
+              </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="createCommunity"></label>
+              <div class="col-md-4 text-align-center">
+                <button id="createCommunity" value="<%= user._id %>" name="userID" class="btn btn-primary" onclick="createNewCiv()">Create</button>
+              </div>
+            </div>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="communitiesInfoModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+            <fieldset>
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true" onclick="createNewCiv()">X</button>
+            <h4>Check out the New Communities Section!</h4>
+            <hr style="width: 88%;max-width: 100rem;">
+            <a data-toggle="modal" href="#communitiesModal" onclick="dismissCommunitiesInfoModal()"><img src="/images/communities-example.png" class="diagonal-arrow float-right" alt="communities example screenshot"></a>
+            <img src="/static/images/diagonal-arrow-white.png" class="diagonal-arrow" alt="diagonal arrow pointing to top right of page">
+            </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="notificationModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body text-center">
+            <fieldset>
+            <button class="btn btn-primary btn-md float-right" type="button" data-dismiss="modal" aria-hidden="true">X</button>
+            <h3>No Notifications :) </h3>
+            <h1 class="margin-top-2">🚀</h1>
+            </fieldset>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <% include account-management %>
+
+  <!--scripts loaded here -->
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+  <script src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery.easing.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.0/jquery.cookie.min.js"></script>
+  <script src="/static/js/wow.js"></script>
+  <script src="/static/js/scripts.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.1.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    
+    // personas table 
+    if (document.cookie.split(';').some((item) => item.includes('persona_icon=list'))) {
+      showList()
+    } else if (document.cookie.split(';').some((item) => item.includes('persona_icon=app'))) {
+      showApps()
+    } else {
+      $('.dataTables_filter').hide();
+      $('#personas-table-div').hide()
+      $('#app-icon-personas').toggleClass('active-icon')
+    }
+    var personasDataTable = $('#personas-table').DataTable({
+    "bLengthChange": false,
+    })
+    $('#civilian-search').on("keyup", function() {
+      personasDataTable.search(this.value).draw();
+      var value = $(this).val().toLowerCase();
+      $(".civ-thumbnails").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    })
+
+    // vehicles table
+    if (document.cookie.split(';').some((item) => item.includes('vehicle_icon=list'))) {
+      showVehicleList()
+    } else if (document.cookie.split(';').some((item) => item.includes('vehicle_icon=app'))) {
+      showVehicleApps()
+    } else {
+      $('.dataTables_filter').hide();
+      $('#vehicles-table-div').hide()
+      $('#app-icon-vehicles').toggleClass('active-icon')
+    }
+    var vehicleDataTable = $('#vehicle-table').DataTable({
+      "bLengthChange": false,
+    })
+    $('#vehicle-search').on("keyup", function() {
+      vehicleDataTable.search(this.value).draw();
+      var value = $(this).val().toLowerCase();
+      $(".veh-thumbnails").filter(function() {
+        $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      });
+    })
+
+  // firearms table
+  if (document.cookie.split(';').some((item) => item.includes('firearm_icon=list'))) {
+      showFirearmsList()
+    } else if (document.cookie.split(';').some((item) => item.includes('firearm_icon=app'))) {
+      showFirearmsApps()
+    } else {
+      $('.dataTables_filter').hide();
+      $('#firearms-table-div').hide()
+      $('#app-icon-firearms').toggleClass('active-icon')
+    }
+  var firearmDataTable = $('#firearm-table').DataTable({
+    "bLengthChange": false,
+  })
+  $('#firearm-search').on("keyup", function() {
+    firearmDataTable.search(this.value).draw();
+    var value = $(this).val().toLowerCase();
+    $(".firearm-thumbnails").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  })
+
+  // check for license-notification 
+  if (document.cookie.split(';').some((item) => item.includes('license_notice=hidden'))) {
+      hideLicenseNotice()
+    } else {
+      $('#license-notice').show();
+    }
+
+// displays the Update Username and Cancel buttons for updating the username
+var myUser = <%- JSON.stringify(user) %>;
+$('#accountUsername').on('keyup', function(e) {
+  if(e.target.value != myUser.user.username && e.target.value != '') {
+    $('#updateUsernameBtns').show();
+  } else {
+    $('#updateUsernameBtns').hide();
+  }
+})
+
+$('#accountCallSign').on('keyup', function(e) {
+  if(e.target.value != myUser.user.callSign && e.target.value != '') {
+    $('#updateCallSignBtns').show();
+  } else {
+    $('#updateCallSignBtns').hide();
+  }
+})
+
+$('#panic-button-check-sound').prop("checked", myUser.user.panicButtonSound)
+
+// prevents spaces from user input
+$("#civ-first-name").keydown(function(event) {
+    if (event.keyCode == 32) {
+        event.preventDefault();
+        $('#civ-first-name').popover('show')
+    } else {
+      $('#civ-first-name').popover('hide')
+    }
+});
+$("#firstName").keydown(function(event) {
+    if (event.keyCode == 32) {
+        event.preventDefault();
+        $('#firstName').popover('show')
+    } else {
+      $('#firstName').popover('hide')
+    }
+});
+$("#civ-last-name").keydown(function(event) {
+    if (event.keyCode == 32) {
+        event.preventDefault();
+        $('#civ-last-name').popover('show')
+    } else {
+      $('#civ-last-name').popover('hide')
+    }
+});
+$("#lastName").keydown(function(event) {
+    if (event.keyCode == 32) {
+        event.preventDefault();
+        $('#lastName').popover('show')
+    } else {
+      $('#lastName').popover('hide')
+    }
+});
+});
+
+// add in a delete function as it is not supported as of jQuery {whatever-version-we-have}
+$.delete = function(url, data, callback, type){
+ if ( $.isFunction(data) ){
+   type = type || callback,
+       callback = data,
+       data = {}
+ }
+
+ return $.ajax({
+   url: url,
+   type: 'DELETE',
+   success: callback,
+   data: data,
+   contentType: type
+ });
+}
+
+  function loadCivData(index) {
+    var myVar = <%- JSON.stringify(personas) %>;
+    loadDriversLicense(myVar, index);
+    var firstName = myVar[index].civilian.firstName
+    var lastName = myVar[index].civilian.lastName
+    var birthday = myVar[index].civilian.birthday
+    var createdDate = new Date(myVar[index].civilian.createdAt)
+    var expDay = createdDate.getDate()
+    var expMonth = (createdDate.getMonth())+1
+    var expYear = (createdDate.getFullYear())+10
+    
+    $('#civilianID').val(myVar[index]._id)
+    $('#civilianIDView').text(myVar[index]._id)
+    $('#firstName').text(firstName)
+    $('#lastNameView').text(lastName)
+    $('#birthdayView').text(birthday)
+    $('#warrantsView').val(myVar[index].civilian.warrants)
+    $('#firearmLicenseView').val(myVar[index].civilian.firearmLicense)
+    $('#addressView').val(myVar[index].civilian.address)
+    $('#occupationView').val(myVar[index].civilian.occupation)
+
+    // data to be set for condition form
+    $('#condition-civ-first-name').val(firstName)
+    $('#condition-civ-last-name').val(lastName)
+    $('#condition-civ-date-of-birth').val(birthday)
+
+    // data to be set for medication form
+    $('#medication-civ-first-name').val(firstName)
+    $('#medication-civ-last-name').val(lastName)
+    $('#medication-civ-date-of-birth').val(birthday)
+
+    // data to be sent to db for civ deletion
+    $('#firstName').val(firstName)
+    $('#lastName').val(lastName)
+    $('#delBirthday').val(birthday)
+  }
+
+  function loadDriversLicense(myVar, index) {
+    var firstName = myVar[index].civilian.firstName
+    var lastName = myVar[index].civilian.lastName
+    var birthday = myVar[index].civilian.birthday
+    var createdDate = new Date(myVar[index].civilian.createdAt)
+    var expDay = createdDate.getDate()
+    var expMonth = (createdDate.getMonth())+1
+    var expYear = (createdDate.getFullYear())+10
+    
+    $('#civilianID').val(myVar[index]._id)
+    $('#civilianIDViewLic').text('DL: '+ myVar[index]._id)
+    $('#firstNameLic').text(firstName)
+    $('#lastNameLic').text(lastName)
+    switch (myVar[index].civilian.licenseStatus) {
+      case '1':
+        $('#licenseStatusViewLic').text('Valid').removeClass('color-red').addClass('color-black')
+        $('#click-to-delete-lic').removeClass('hide')
+        break;
+      case '2':
+        $('#licenseStatusViewLic').text('Revoked').removeClass('color-black').addClass('color-red')
+        $('#click-to-delete-lic').removeClass('hide')
+        break;
+      default:
+        $('#drivers-license').hide();
+        $('#click-to-create-lic').removeClass('hide')
+        $('#licenseStatusViewLic').text('None').removeClass('color-black').addClass('color-red')
+    }
+    var licenseDOB = birthday.split('-')
+    if (licenseDOB.length == 3) {
+      $('#birthdayViewLic').text(licenseDOB[1]+'/'+licenseDOB[2]+'/'+licenseDOB[0])
+    } else {
+      $('#birthdayViewLic').text(birthday)
+    }
+    $('#warrantsView').val(myVar[index].civilian.warrants)
+    $('#firearmLicenseView').val(myVar[index].civilian.firearmLicense)
+    $('#addressViewLic').text(myVar[index].civilian.address)
+    $('#license-expiration').text(expMonth.toString().padStart(2, '0')+'/'+expDay.toString().padStart(2,'0')+'/'+expYear) //Janky AF
+    $('#license-issued').text(createdDate.toLocaleDateString('en-US', {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    }))
+  }
+
+  function loadTicketsAndWarnings(index) {
+    $("#warningTable tbody").empty()
+    $("#citationTable tbody").empty()
+    var parameters = { civID: index };
+       $.get('/tickets',parameters, function(data) {
+         data.forEach(function(e){
+           if (e.ticket.isWarning) {
+            var newRowContent = "<tr><td>"+e.ticket.date+"</td><td>"+e.ticket.violation+"</td></tr>"
+            $("#warningTable tbody").append(newRowContent)
+           } else {
+          var newRowContent = "<tr><td>"+e.ticket.date+"</td><td>"+e.ticket.violation+"</td><td>"+"$"+e.ticket.amount+"</td></tr>"
+          $("#citationTable tbody").append(newRowContent)
+           }
+         });
+     });
+  }
+
+  function loadArrests(index) {
+    $("#arrestTable tbody").empty()
+    var parameters = { civID: index };
+       $.get('/arrests',parameters, function(data) {
+         data.forEach(function(e){
+          var newRowContent = "<tr><td>"+e.arrestReport.date+"</td><td>"+e.arrestReport.charges+"</td><td>"+e.arrestReport.summary+"</td></tr>"
+          $("#arrestTable tbody").append(newRowContent)
+         });
+     });
+  }
+
+  function loadReports(index) {
+    $("#reportsTable tbody").empty()
+    var parameters = { civID: index };
+       $.get('/medical-reports',parameters, function(data) {
+         data.forEach(function(e){
+          var newRowContent = `<tr id="`+e._id+`"><td>`+e.report.date+`</td><td style='text-transform: capitalize;'>`+e.report.hospitalized+`</td><td style='text-transform: capitalize;'>`+e.report.details+`</td><td class="text-align-center"><a class='clickable' onclick="deleteReport('`+e._id+`', '`+e.report.civilianID+`')"><i class="glyphicon glyphicon-remove-circle color-alert-red"></i></a></td></tr>`
+          $("#reportsTable tbody").append(newRowContent)
+         });
+     });
+  }
+
+  function loadMedications(index) {
+    $('#medication-civilian-id').val(index)
+    $("#medicationsTable tbody").empty()
+    var parameters = { civID: index };
+       $.get('/medications',parameters, function(data) {
+         data.forEach(function(e){
+          var newRowContent = "<tr id=\""+e._id+"\"><td>"+e.medication.startDate+"</td><td style='text-transform: capitalize;'>"+e.medication.name+"</td><td>"+e.medication.dosage+"</td><td>"+e.medication.frequency+"</td><td class=\"text-align-center\"><a class='clickable' onclick=\"deleteMedication('"+e._id+"')\"><i class=\"glyphicon glyphicon-remove-circle color-alert-red\"></i></a></td></tr>"
+          $("#medicationsTable tbody").append(newRowContent)
+         });
+     });
+  }
+
+  function loadConditions(index) {
+    $('#condition-civilian-id').val(index)
+    $("#conditionsTable tbody").empty()
+    var parameters = { civID: index };
+       $.get('/conditions',parameters, function(data) {
+         data.forEach(function(e){
+          var newRowContent = "<tr id=\""+e._id+"\"><td>"+e.condition.dateOccurred+"</td><td style='text-transform: capitalize;'>"+e.condition.name+"</td><td>"+e.condition.details+"</td><td class=\"text-align-center\"><a class='clickable' onclick=\"deleteCondition('"+e._id+"')\"><i class=\"glyphicon glyphicon-remove-circle color-alert-red\"></i></a></td></tr>"
+          $("#conditionsTable tbody").append(newRowContent)
+         });
+     });
+  }
+
+  function deleteReport(id, civilianID) {
+    var parameters = { reportID: id };
+    $.delete('/reports/'+id, parameters, function(data) {
+      $(`table#reportsTable tr#`+id).remove()
+    })
+  }
+
+  function deleteMedication(id) {
+    var parameters = { medicationID: id };
+    $.delete('/medications/'+id, parameters, function(data) {
+      $('table#medicationsTable tr#'+id).remove()
+    })
+  }
+
+  function deleteCondition(id) {
+    var parameters = { conditionID: id };
+    $.delete('/conditions/'+id, parameters, function(data) {
+      $('table#conditionsTable tr#'+id).remove()
+    })
+  }
+
+  function loadVehData(index) {
+    var myVar = <%- JSON.stringify(vehicles) %>;
+    $('#vehicleID').val(myVar[index]._id)
+    $('#plateVeh').val(myVar[index].vehicle.plate.toUpperCase())
+
+    // since only cars after 6/26/2020 will have this info, we need to check for empty values
+    if (myVar[index].vehicle.vin == "" || myVar[index].vehicle.vin == undefined) {
+      $('#vinVeh').val("")
+      $('#no-existing-vin').show()
+    } else {
+      $('#vinVeh').val(myVar[index].vehicle.vin.toUpperCase())
+      $('#no-existing-vin').hide()
+    }
+    
+    $('#modelVeh').val(myVar[index].vehicle.model)
+    $('#colorView').val(myVar[index].vehicle.color)
+    $('#validRegView').val(myVar[index].vehicle.validRegistration)
+    $('#validInsView').val(myVar[index].vehicle.validInsurance)
+    $('#roVeh').val(myVar[index].vehicle.registeredOwner)
+    $('#stolenView').val(myVar[index].vehicle.isStolen)
+  }
+
+  function loadFirearmData(index) {
+    var myVar = <%- JSON.stringify(firearms) %>;
+    $('#firearmID').val(myVar[index]._id)
+    $('#serial-number-details').val(myVar[index].firearm.serialNumber)
+    $('#weapon-type-details').val(myVar[index].firearm.weaponType)
+    $('#registeredOwner-details').val(myVar[index].firearm.registeredOwner)
+    $('#is-stolen-details').val(myVar[index].firearm.isStolen)
+  }
+
+  function createNewCiv() {
+    $('#civ-first-name').popover('hide')
+    $('#civ-last-name').popover('hide')
+  }
+
+  function clearHelpText() {
+    $('#firstName').popover('hide')
+    $('#lastName').popover('hide')
+  }
+
+  function fillAccountDetails() {
+    var myUser = <%- JSON.stringify(user) %>;
+    $('#accountEmail').val(myUser.user.email)
+    $('#accountUsername').val(myUser.user.username)
+    $('#accountCallSign').val(myUser.user.callSign)
+  }
+
+  function cancelUsername() {
+    var myUser = <%- JSON.stringify(user) %>;
+    $('#accountUsername').val(myUser.user.username)
+    $('#updateUsernameBtns').hide();
+  }
+
+  function cancelCallSign() {
+    var myUser = <%- JSON.stringify(user) %>;
+    $('#accountCallSign').val(myUser.user.callSign)
+    $('#updateCallSignBtns').hide();
+  }
+
+  function generateSerialNumber(length, inputID) {
+    var result           = '';
+   var characters       = 'ABCDEFGHJKMNPQRSTUVWXYZ0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   $('#'+inputID).val(result);
+  }
+
+  function showList() {
+    $('.dataTables_filter').hide();
+    $('#personas-table-div').show()
+    $('#personas-thumbnail').hide()
+    $('#app-icon-personas').addClass('inactive-icon').removeClass('active-icon')
+    $('#list-icon-personas').addClass('active-icon').removeClass('inactive-icon')
+    document.cookie = "persona_icon=list"
+  }
+
+  function showApps() {
+    $('.dataTables_filter').hide();
+    $('#personas-table-div').hide()
+    $('#personas-thumbnail').show()
+    $('#app-icon-personas').addClass('active-icon').removeClass('inactive-icon')
+    $('#list-icon-personas').addClass('inactive-icon').removeClass('active-icon')
+    document.cookie = "persona_icon=app"
+  }
+
+  function showVehicleList() {
+    $('.dataTables_filter').hide();
+    $('#vehicles-table-div').show()
+    $('#vehicles-thumbnail').hide()
+    $('#app-icon-vehicles').addClass('inactive-icon').removeClass('active-icon')
+    $('#list-icon-vehicles').addClass('active-icon').removeClass('inactive-icon')
+    document.cookie = "vehicle_icon=list"
+  }
+
+  function showVehicleApps() {
+    $('.dataTables_filter').hide();
+    $('#vehicles-table-div').hide()
+    $('#vehicles-thumbnail').show()
+    $('#app-icon-vehicles').addClass('active-icon').removeClass('inactive-icon')
+    $('#list-icon-vehicles').addClass('inactive-icon').removeClass('active-icon')
+    document.cookie = "vehicle_icon=app"
+  }
+
+  function showFirearmsList() {
+    $('.dataTables_filter').hide();
+    $('#firearms-table-div').show()
+    $('#firearms-thumbnail').hide()
+    $('#app-icon-firearms').addClass('inactive-icon').removeClass('active-icon')
+    $('#list-icon-firearms').addClass('active-icon').removeClass('inactive-icon')
+    document.cookie = "firearm_icon=list"
+  }
+
+  function showFirearmsApps() {
+    $('.dataTables_filter').hide();
+    $('#firearms-table-div').hide()
+    $('#firearms-thumbnail').show()
+    $('#app-icon-firearms').addClass('active-icon').removeClass('inactive-icon')
+    $('#list-icon-firearms').addClass('inactive-icon').removeClass('active-icon')
+    document.cookie = "firearm_icon=app"
+  }
+
+  function hideLicenseNotice() {
+    document.cookie = "license_notice=hidden"
+    $('#license-notice').hide();
+  }
+
+  function togglePanicBtnSound() {
+    var socket = io();
+    socket.emit('update_panic_btn_sound', <%- JSON.stringify(user) %>)
+    socket.on('load_panic_btn_result', (res) => {
+      $('#panic-button-check-sound').prop("checked", !res.user.panicButtonSound)
+      $('#successfully-updated-alert').removeClass('hide').delay(2000).fadeOut(1000, function() {
+    $(this).hide();
+  });
+    })
+  }
+</script>
