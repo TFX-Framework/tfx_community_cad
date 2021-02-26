@@ -10,3 +10,5 @@ app/*
 
 # Website
 app.js
+index.js
+start.js
