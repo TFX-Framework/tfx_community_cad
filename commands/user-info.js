@@ -11,7 +11,7 @@ module.exports.run = async (client , message, args) => {
 
     if (!user) return message.reply('Please provide a users username from the CAD')
      
-    let fetched_user = await Users.findOne({ user.username: user.id });
+    let fetched_user = await Users.findOne({ username: user.id });
 
    // if (!fetched_user) await new Users({ discordUserID: user.id }).save();
 
