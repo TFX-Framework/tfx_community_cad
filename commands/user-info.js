@@ -31,7 +31,7 @@ module.exports.run = async (client , message, args) => {
         let error_embed = new MessageEmbed()
         .setAuthor('Critical Error: Command Failed', client.config.logo)
         .setColor(client.config.color)
-        .setDescription('Please report this to <!@510065483693817867 >')
+        .setDescription('Please report this to <!@510065483693817867>')
         .addField('Error', `${error.message}`, true)
         .setTimestamp()
         .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
