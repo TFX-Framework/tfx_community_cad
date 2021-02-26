@@ -46,7 +46,7 @@
   "scripts": {
     "start": "node --optimize_for_size --max-old-space-size=6000 --gc_interval=100 app.js && node index.js",
     "test": "mocha",
-    "bot": "node index.js"
+    "bot": "node index.js",
     "dev": "nodemon --optimize_for_size --max-old-space-size=6000 --gc_interval=100 app.js"
   },
   "engines": {
