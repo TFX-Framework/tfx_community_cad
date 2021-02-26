@@ -1,7 +1,7 @@
 {
   "name": "police-cad",
   "description": "This is a easy to setup and use police server CAD. Includes a signup/login for both Civilians and Police Officers. Also this is mobile friendly. Built for GTA V's Modding framework: FiveM.",
-  "version": "0.3.2",
+  "version": "2.15.0",
   "main": "server.js",
   "dependencies": {
     "async": "^3.2.0",
