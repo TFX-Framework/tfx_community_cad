@@ -28,7 +28,7 @@ module.exports.run = async (client , message, args) => {
    } catch (error) {
 
         let error_embed = new MessageEmbed()
-        .setAuthor('Critical Error', client.config.logo)
+        .setAuthor('Critical Error: Command Failed', client.config.logo)
         .setColor(client.config.color)
         .setDescription('Please report this to Toxic Dev')
         .addField('Error', `${error.message}`, true)
