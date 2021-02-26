@@ -9,7 +9,16 @@ module.exports.run = async (client , message, args) => {
 
     let the_user = args.slice(0).join(" ");
 
-    if (!the_user) return message.reply('Please provide a users username from the CAD')
+   let no_user = new MessageEmbed()
+      .setAuthor('User Error: Missing Args', client.config.logo)
+      .setColor(client.config.color)
+      .setDescription('Please provide a Username to fetch.')
+      .addField('Example', `cad.user-info TheRealToxicDev`, true)
+      .setTimestamp()
+      .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
+        
+
+    if (!the_user) return message.reply(no_user)
      
     let fetched_user = await Users.findOne({ "user.username": the_user });
 
