@@ -14,6 +14,7 @@ client.aliases = new Collection();
 
 client.limits = new Map();
 client.queue = new Map();
+client.config = config;
 
 client.token = process.env.TOKEN;
 
