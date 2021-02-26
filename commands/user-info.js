@@ -24,6 +24,7 @@ module.exports.run = async (client , message, args) => {
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
      return message.channel.send(embed)
+
    } catch (error) {
 
         let error_embed = new MessageEmbed()
