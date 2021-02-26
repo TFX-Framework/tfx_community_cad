@@ -3,6 +3,8 @@ This is a easy to use Police/Server CAD/MDT.
 Includes a signup/login for both Civilians and Police Officers. 
 Also this is mobile friendly. Built for GTA V's Modding framework: FiveM.
 
+[![Build Status](https://travis-ci.com/TFX-Framework/tfx_community_cad.svg?branch=master)](https://travis-ci.com/TFX-Framework/tfx_community_cad)
+
 ---
 
 ## Self Hosting
