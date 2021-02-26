@@ -16,9 +16,9 @@ const { PORT, DISCORD_TOKEN, DB_URI } = process.env;
     
     let client = await bot.init(DISCORD_TOKEN);
 
-    console.log(colors.yellow(`Connected to the database on `) + colors.underline.green(DB_URI));
+    console.log(`Connected to the database`);
 
     await new App(client).listen(process.env.PORT || 8080);
 
-    console.log(colors.yellow(`Running on port `) + colors.underline.green(PORT || 8080));
+    console.log(`Running on PORT: ${PORT}`)
 })()
