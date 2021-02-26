@@ -5,6 +5,7 @@ const eventFiles2 = readdirSync(filePath2);
 const timers = require("timers");
 const fetch = require('node-fetch');
 const package = require('../package.json')
+const { MessageEmbed } = require('discord.js')
 
 
 module.exports = async (client) => {
