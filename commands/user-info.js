@@ -10,7 +10,6 @@ module.exports.run = async (client , message, args) => {
     let user = await client.users.cache.get(args[0])
 
     if (!user) return message.reply('Please provide a User ID')
-
      
     let fetched_user = await Users.findOne({ discordUserID: user.id });
 
@@ -18,8 +17,8 @@ module.exports.run = async (client , message, args) => {
     
     let embed = new MessageEmbed()
       .setAuthor("User Information", client.config.logo)
-      .setDescription(`${fetched_user.user.username}s Information`)
-      .addField("Name", `${fetched_user.user.name}`)
+      .setDescription(`${fetched_user.username}s Information`)
+      .addField("Name", `${fetched_user.name}`)
       .addField("Call Sign", `${fetched_user.user.callSign}`)
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
@@ -30,7 +29,7 @@ module.exports.run = async (client , message, args) => {
         let error_embed = new MessageEmbed()
         .setAuthor('Critical Error: Command Failed', client.config.logo)
         .setColor(client.config.color)
-        .setDescription('Please report this to Toxic Dev')
+        .setDescription('Please report this to <!@510065483693817867 >')
         .addField('Error', `${error.message}`, true)
         .setTimestamp()
         .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
