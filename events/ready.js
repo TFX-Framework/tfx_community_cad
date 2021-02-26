@@ -3,6 +3,7 @@ const { join } = require("path")
 const filePath2 = join(__dirname, "..", "events");
 const eventFiles2 = readdirSync(filePath2);
 const timers = require("timers");
+const fetch = require('node-fetch');
 
 
 module.exports = async (client) => {
