@@ -1,5 +1,6 @@
 const { Client, Collection } = require ('discord.js');
 const { cpuUsage } = require('process');
+const config = require('./config/client');
 
 require("./app");
 
@@ -19,8 +20,8 @@ client.token = process.env.TOKEN;
 /** SNIPE MAP FOR DELETED MESSAGES 😍 */
 client.snipeMap = new Map();
 
-/*const commands = require ('./structures/commands');
-commands.run(client);*/
+const commands = require ('./structures/commands');
+commands.run(client);
 
 const events = require ('./structures/events');
 events.run(client);
