@@ -5,6 +5,8 @@ module.exports.run = async (client , message, args) => {
 
       message.delete().catch()
 
+     try { 
+
     let user = await client.users.cache.get(args[0])
 
     if (!user) return message.reply('Please provide a User ID')
@@ -22,7 +24,19 @@ module.exports.run = async (client , message, args) => {
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
      return message.channel.send(embed)
-   }
+   } catch (error) {
+
+        let error_embed = new MessageEmbed()
+        .setAuthor('Critical Error', client.config.logo)
+        .setColor(client.config.color)
+        .setDescription('Please report this to Toxic Dev')
+        .addField('Error', `${error.message}`, true)
+        .setTimestamp()
+        .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
+        
+        return message.channel.send(error_embed)
+
+    }
 }
 
 
