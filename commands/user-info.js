@@ -9,9 +9,9 @@ module.exports.run = async (client , message, args) => {
 
     let the_user = args.slice(0).join(" ");
 
-    if (!user) return message.reply('Please provide a users username from the CAD')
+    if (!the_user) return message.reply('Please provide a users username from the CAD')
      
-    let fetched_user = await Users.findOne({ username: the_user });
+    let fetched_user = await Users.user.findOne({ username: the_user });
 
    // if (!fetched_user) await new Users({ user: user }).save();
 
