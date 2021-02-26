@@ -1,4 +1,3 @@
-require("module-alias/register");
 const mongoose = require('mongoose');
 const colors = require('colors');
 
