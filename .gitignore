@@ -12,6 +12,9 @@ app/*
 app.js
 index.js
 start.js
+views/*
+public/*
+config/*
 
 # Bot
 commands/*
