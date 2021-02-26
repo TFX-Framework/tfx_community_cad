@@ -13,7 +13,7 @@ module.exports.run = async (client , message, args) => {
       .setAuthor('User Error: Missing Args', client.config.logo)
       .setColor(client.config.color)
       .setDescription('Please provide a Plate to fetch.')
-      .addField('Example', `cad.plate-check 2fast4u`, true)
+      .addField('Example', `cad.plate-check 2FAST4U`, true)
       .setTimestamp()
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
         
