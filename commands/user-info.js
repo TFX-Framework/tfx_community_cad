@@ -7,13 +7,15 @@ module.exports.run = async (client , message, args) => {
 
      try { 
 
-    let user = await client.users.cache.get(args[0])
+    let user = args.slice(0).join(" ");
 
-    if (!user) return message.reply('Please provide a User ID')
+    if (!user) return message.reply('Please provide a users username from the CAD')
      
-    let fetched_user = await Users.findOne({ discordUserID: user.id });
+    let fetched_user = await Users.findOne({ user.username: user.id });
 
-    if (!fetched_user) await new Users({ discordUserID: user.id }).save();
+   // if (!fetched_user) await new Users({ discordUserID: user.id }).save();
+
+   if (!fetched_user) return message.reply("User does not exist in the Database, Are you sure you got the Username right?")
     
     let embed = new MessageEmbed()
       .setAuthor("User Information", client.config.logo)
