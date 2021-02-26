@@ -16,7 +16,7 @@ const { PORT, DISCORD_TOKEN, DB_URI } = process.env;
 
     console.log(`Connected to the database`);
 
-    await new App(client).listen(process.env.PORT || 8080);
+    //await new App(client).listen(process.env.PORT || 8080);
 
-    console.log(`Running on PORT: ${PORT}`)
+    //console.log(`Running on PORT: ${PORT}`)
 })()
