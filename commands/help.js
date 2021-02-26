@@ -33,7 +33,7 @@ module.exports.run = async (client , message, args) => {
     let info_commands = client.commands.filter(command => command.help.category == 'Information');
 
     const embed2 = new MessageEmbed()
-      embed2.setAuthor(`dmod.gg Help Command`, client.config.logo)
+      embed2.setAuthor(`ToxicFX CAD Help Command`, client.config.logo)
       embed2.setColor(client.config.color)
       embed2.setDescription(`Command Info: cad.help <commandName>`)
       embed2.addField('Information Commands', info_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
