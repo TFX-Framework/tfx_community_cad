@@ -19,8 +19,7 @@ module.exports.run = async (client , message, args) => {
     
     let embed = new MessageEmbed()
       .setAuthor("User Information", client.config.logo)
-      .setDescription(`${fetched_user}s Information`)
-      .addField("Name", `${fetched_user.user.name}`)
+      .setDescription(`${fetched_user.user.username}s Information`)
       .addField("Call Sign", `${fetched_user.user.callSign}`)
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
