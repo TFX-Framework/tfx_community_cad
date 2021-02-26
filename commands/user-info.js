@@ -1,54 +1,42 @@
 const { MessageEmbed } = require('discord.js');
+const Users = require('../app/models/user');
 
 module.exports.run = async (client , message, args) => {
 
-    message.delete().catch()
+      message.delete().catch()
 
-    if (args[0] && client.commands.has(args[0])) {
+      function getUserFromMention(mention) {
+	if (!mention) return;
 
-        const command = client.commands.get(args[0]);
+	if (mention.startsWith('<@') && mention.endsWith('>')) {
+		mention = mention.slice(2, -1);
 
-        let command_name = command.help.name.charAt(0).toUpperCase() + command.help.name.slice(1);
+		if (mention.startsWith('!')) {
+			mention = mention.slice(1);
+		}
 
-        let command_aliases = 'No aliases for that command.'
+		return client.users.cache.get(mention);
+	     }
+          }
 
-        if (command.help.aliases.lenght < 1) {
-            command_aliases = 'No aliases for that command.'
-        } else {
-            command_aliases = command.help.aliases.join("\n")
-        }
-        const embed = new MessageEmbed()
-        .setAuthor(`${command_name} Command Info`, structures.dmodv2)
-        .setColor(structures.mainColor)
-        .addField('Category', command.help.category, true)
-        .addField('Name', command.help.name, true)
-        .addField('Description', command.help.description, true)
-        .addField('Aliases', '``' + command_aliases + '``', true)
-        .addField('Usage', command.help.example.replace(/%P%/g, client.config.prefix), true)
-        .addField('Required Perms', `User: ${command.requirements.userPerms}\nClient: ${command.requirements.clientPerms}`, true)
-        .setTimestamp()
-
-        return message.channel.send(embed)
+    if (args[0]) {
+       const user = getUserFromMention(args[0]);
+    if (!user) {
+       return message.reply('Please use a proper mention if you want to see someone elses avatar.');
     }
+    let fetched_user = await Users.findOne({ discordUserID: user.id });
 
-    let info_commands = client.commands.filter(command => command.help.category == 'Information');
+    if (!fetched_user) await new Users({ discordUserID: user.id }).save();
+    
+    let embed = new MessageEmbed()
+      .setAuthor("User Information", client.config.logo)
+      .setDescription(`${fetched_user.user.username}s Information`)
+      .addField("Name", `${fetched_user.user.name}`)
+      .addField("Call Sign", `${fetched_user.user.callSign}`)
+      .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
-    let utility_commands = client.commands.filter(command => command.help.category == 'Utility');
-
-    let owner_commands = client.commands.filter(command => command.help.category == 'Owner');
-
-    const embed2 = new MessageEmbed()
-      embed2.setAuthor(`dmod.gg Help Command`, structures.dmodv2)
-      embed2.setColor(structures.mainColor)
-      embed2.setDescription(`Command Info: ${client.config.prefix}help <commandName>`)
-      embed2.addField('Information Commands', info_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
-      embed2.addField('Utility Commands', utility_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
-//   if (process.env.DMOD_OWNERS.split(' ').includes(message.author.id)) {
-//       embed2.addField('Owner Commands', owner_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
-//   }
-      embed2.setFooter('Syntax: <> = Require | [] = Optional', structures.dmodv2)
-
-      return message.channel.send(embed2)
+     return message.channel.send(embed)
+   }
 }
 
 
@@ -57,7 +45,7 @@ module.exports.help = {
     category: "Cad-Users",
     aliases: [],
     description: "Show some info about the Specified User!",
-    example: "help | help <command_name>"
+    example: "user-info <UserMention>"
 }
 
 module.exports.requirements = {
