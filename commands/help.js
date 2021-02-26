@@ -31,6 +31,7 @@ module.exports.run = async (client , message, args) => {
     }
 
     let info_commands = client.commands.filter(command => command.help.category == 'Information');
+    let cad_user_cmds = client.commands.filter(command => command.help.category == 'Cad-User');
 
     const embed2 = new MessageEmbed()
       embed2.setAuthor(`ToxicFX CAD Help Command`, client.config.logo)
