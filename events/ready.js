@@ -34,7 +34,7 @@ let activities = [
     i++;
   }, 30000);
 
-  await fetch('https://api.toxicfx.org/api/v1/versions/api')
+  await fetch('https://api.toxicfx.org/v1/versions/community-cad')
       .then(res => res.json())
       .then(json => {
 
