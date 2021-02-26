@@ -53,10 +53,10 @@ module.exports.run = async (client , message, args) => {
 
 
 module.exports.help = {
-    name: "help",
-    category: "Information",
-    aliases: ['helpme', 'h'],
-    description: "Send you a list of all my commands!",
+    name: "user-info",
+    category: "Cad-Users",
+    aliases: [],
+    description: "Show some info about the Specified User!",
     example: "help | help <command_name>"
 }
 
