@@ -39,8 +39,16 @@ module.exports = async (client, message) => {
     ownerOnly.setTitle("Lacking Permissions ❌")
     ownerOnly.setDescription("Ree!! You dont have permission to use this command!!")
 
-    if(cmd.requirements.devOnly && !client.config.devs.includes(message.author.id))
+    if(cmd.requirements.staffOnly && !client.config.devs.includes(message.author.id))
     return message.channel.send(ownerOnly)
+
+    let disabled = new MessageEmbed()
+    .setAuthor("Command Disabled", client.user.displayAvatarURL())
+    .setDescription('Hmm, it seems this command has been disabled.')
+    .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
+
+    if(!cmd.requirements.enabled)
+    return message.channel.send(disabled)
 
     let embed = new MessageEmbed()
     .setAuthor("Lacking Permissions ❌", client.config.logo)
