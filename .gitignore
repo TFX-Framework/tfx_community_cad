@@ -4,3 +4,9 @@ node_modules/*
 # Enviroment variables
 .envrc
 .env
+
+# Database
+app/*
+
+# Website
+app.js
