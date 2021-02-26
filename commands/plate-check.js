@@ -1,5 +1,5 @@
 const { MessageEmbed } = require('discord.js');
-const Users = require('../app/models/user');
+const Registry = require('../app/models/vehicle');
 
 module.exports.run = async (client , message, args) => {
 
@@ -7,36 +7,33 @@ module.exports.run = async (client , message, args) => {
 
  try { 
 
-    let the_user = args.slice(0).join(" ");
+    let plate = args.slice(0).join(" ");
 
-   let no_user = new MessageEmbed()
+   let no_plate = new MessageEmbed()
       .setAuthor('User Error: Missing Args', client.config.logo)
       .setColor(client.config.color)
-      .setDescription('Please provide a Username to fetch.')
-      .addField('Example', `cad.user-info TheRealToxicDev`, true)
+      .setDescription('Please provide a Plate to fetch.')
+      .addField('Example', `cad.plate-check 2fast4u`, true)
       .setTimestamp()
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
         
 
-    if (!the_user) return message.reply(no_user)
+    if (!plate) return message.channel.send(no_user)
      
-    let fetched_user = await Users.findOne({ "user.username": the_user });
+    let ncic = await Registry.findOne({ "vehicle.plate": plate });
 
-   // if (!fetched_user) await new Users({ user: user }).save();
-
-   if (!fetched_user) return message.reply("User does not exist in the Database, Are you sure you got the Username right?")
+   if (!ncic) return message.reply("License Plate does not exist in the Database, Are you sure you got it right?")
     
     let embed = new MessageEmbed()
-      .setAuthor("User Information", client.config.logo)
-      .setDescription(`${fetched_user.user.username}s Information`)
-      .addField("Call Sign", `${fetched_user.user.callSign}`, true)
-      .addField("Active Community(s)", `${fetched_user.user.activeCommunity}`, true) 
-      .addField("Dispatch Status", `${fetched_user.user.dispatchStatus}`, true)
-      .addField("Status Set By", `${fetched_user.user.dispatchStatusSetBy}`, true) 
-      .addField("Dispatch On Duty", `${fetched_user.user.dispatchOnDuty}`, true)
-      .addField("Panic Sound Enabled", `${fetched_user.user.panicButtonSound}`, true) 
-      .addField("Account Created", `${fetched_user.user.createdAt}`, true)
-      .addField("Last Updated", `${fetched_user.user.updatedAt}`, true) 
+      .setAuthor("Vehicle Lookup", client.config.logo)
+      .addField("Model", `${ncic.vehicle.model}`, true)
+      .addField("Plate", `${ncic.vehicle.plate}`, true) 
+      .addField("Color", `${ncic.vehicle.color}`, true) 
+      .addField("Registration Status", `${ncic.vehicle.validRegistration}`, true)
+      .addField("Insurance Status", `${ncic.vehicle.validInsurance}`, true) 
+      .addField("Registered Owner", `${ncic.vehicle.registeredOwner}`, true)
+      .addField("VIN Number", `${ncic.vehicle.vin}`, true)
+      .addField("Stolen Status", `${ncic.vehicle.isStolen}`, true) 
       .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
 
      return message.channel.send(embed)
