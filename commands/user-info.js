@@ -31,8 +31,9 @@ module.exports.run = async (client , message, args) => {
         let error_embed = new MessageEmbed()
         .setAuthor('Critical Error: Command Failed', client.config.logo)
         .setColor(client.config.color)
-        .setDescription('Please report this to <@!510065483693817867>')
-        .addField('Error', `${error.message}`, true)
+        .setDescription('Please report this to <@!510065483693817867> Along with a Description of what you were doing when you triggered the error')
+        .addField('Error Message', `${error.message}`, true)
+        .addFiel('Report a Bug', 'https://forms.toxicfx.org/bugs/', true) 
         .setTimestamp()
         .setFooter('© 2021 ToxicFX Community CAD', client.config.logo)
         
@@ -45,7 +46,7 @@ module.exports.run = async (client , message, args) => {
 module.exports.help = {
     name: "user-info",
     category: "Cad-Users",
-    aliases: [],
+    aliases: ['user'],
     description: "Show some info about the Specified User!",
     example: "user-info <UserMention>"
 }
