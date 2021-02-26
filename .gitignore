@@ -12,3 +12,8 @@ app/*
 app.js
 index.js
 start.js
+
+# Bot
+commands/*
+events/*
+structures/*
