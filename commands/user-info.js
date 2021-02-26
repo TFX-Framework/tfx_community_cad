@@ -5,25 +5,11 @@ module.exports.run = async (client , message, args) => {
 
       message.delete().catch()
 
-      function getUserFromMention(mention) {
-	if (!mention) return;
+    let user = await client.users.cache.get(args[0])
 
-	if (mention.startsWith('<@') && mention.endsWith('>')) {
-		mention = mention.slice(2, -1);
+    if (!user) return message.reply('Please provide a User ID')
 
-		if (mention.startsWith('!')) {
-			mention = mention.slice(1);
-		}
-
-		return client.users.cache.get(mention);
-	     }
-          }
-
-    if (args[0]) {
-       const user = getUserFromMention(args[0]);
-    if (!user) {
-       return message.reply('Please use a proper mention if you want to see someone elses avatar.');
-    }
+     
     let fetched_user = await Users.findOne({ discordUserID: user.id });
 
     if (!fetched_user) await new Users({ discordUserID: user.id }).save();
