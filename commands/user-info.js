@@ -11,9 +11,9 @@ module.exports.run = async (client , message, args) => {
 
     if (!user) return message.reply('Please provide a users username from the CAD')
      
-    let fetched_user = await Users.findOne({ username: user.id });
+    let fetched_user = await Users.findOne({ username: user });
 
-   // if (!fetched_user) await new Users({ discordUserID: user.id }).save();
+   // if (!fetched_user) await new Users({ username: user }).save();
 
    if (!fetched_user) return message.reply("User does not exist in the Database, Are you sure you got the Username right?")
     
