@@ -37,8 +37,8 @@ module.exports.run = async (client , message, args) => {
       embed2.setAuthor(`ToxicFX CAD Help Command`, client.config.logo)
       embed2.setColor(client.config.color)
       embed2.setDescription(`Command Info: cad.help <commandName>`)
-      embed2.addField('Information Commands', info_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
-      embed2.addField('User Level CAD Commands', cad_user_cmds.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
+      embed2.addField('Info Commands', info_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
+      embed2.addField('User Commands', cad_user_cmds.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
       embed2.setFooter('Syntax: <> = Require | [] = Optional', client.config.logo)
 
       return message.channel.send(embed2)
