@@ -57,7 +57,7 @@ module.exports.run = async (client , message, args) => {
 
 module.exports.help = {
     name: "plate-check",
-    category: "DMV",
+    category: "Registry",
     aliases: ['plate'],
     description: "Run a Plate Check!",
     example: "plate-check 2fast4u"
