@@ -29,6 +29,7 @@
 </head>
 
 <body>
+    <% include notification-modal %>
     <nav id="topNav" class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -218,6 +219,24 @@
     <script src="/static/js/jquery.easing.min.js"></script>
     <script src="/static/js/wow.js"></script>
     <script src="/static/js/scripts.js"></script>
+    <script>
+    
+    //check for notification cookie
+    const cookieValue = document.cookie
+      .split('; ')
+      .find(row => row.startsWith('notification-symbol='))
+      .split('=')[1];
+    if (cookieValue == 'v0.16.0') {
+      $('#notification-symbol').removeClass('notif')
+      $('#notification-count').text('')
+    }  
+    
+  function markAsRead() {
+    document.cookie ="notification-symbol=v0.16.0";
+    $('#notification-symbol').removeClass('notif');
+    $('#notification-count').text('');
+  }
+    </script
 </body>
 
 </html>
