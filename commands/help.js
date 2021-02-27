@@ -30,7 +30,7 @@ module.exports.run = async (client , message, args) => {
         return message.channel.send(embed)
     }
 
-    let info_commands = client.commands.filter(command => command.help.category == 'Information');
+    let info_commands = client.commands.filter(command => command.help.category == 'Info');
     let cad_user_cmds = client.commands.filter(command => command.help.category == 'Users');
     let registry_cmds = client.commands.filter(command => command.help.category == 'Registry');
 
@@ -49,7 +49,7 @@ module.exports.run = async (client , message, args) => {
 
 module.exports.help = {
     name: "help",
-    category: "Information",
+    category: "Info",
     aliases: ['helpme', 'h'],
     description: "Send you a list of all my commands!",
     example: "help | help <command_name>"
