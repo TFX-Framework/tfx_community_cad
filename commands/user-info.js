@@ -60,7 +60,7 @@ module.exports.run = async (client , message, args) => {
 
 module.exports.help = {
     name: "user-info",
-    category: "Cad-Users",
+    category: "Users",
     aliases: ['user'],
     description: "Show some info about the Specified User!",
     example: "user-info <UserMention>"
