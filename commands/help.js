@@ -40,7 +40,7 @@ module.exports.run = async (client , message, args) => {
       embed2.setDescription(`Command Info: cad.help <commandName>`)
       embed2.addField('Info Commands', info_commands.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
       embed2.addField('User Commands', cad_user_cmds.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
-      embed2.addField('Registry Commands', cad_user_cmds.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
+      embed2.addField('Registry Commands', registry_cmds.map(cmd => "``" + cmd.help.name + "``").join("** , **"), true)
       embed2.setFooter('Syntax: <> = Require | [] = Optional', client.config.logo)
 
       return message.channel.send(embed2)
