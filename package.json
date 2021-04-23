@@ -26,7 +26,7 @@
     "mocha": "^7.2.0",
     "mongoose": "^5.9.19",
     "mpromise": "^0.5.5",
-    "mquery": "^3.2.3",
+    "mquery": "^3.2.4",
     "ms": "^2.1.2",
     "node-fetch": "^2.6.1",
     "parse-ms": "^2.1.0",
