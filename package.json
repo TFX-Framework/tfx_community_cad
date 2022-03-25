@@ -41,19 +41,23 @@
     "rate-limit-mongo": "^2.2.0",
     "socket.io": "^2.4.0",
     "svg-captcha": "^1.4.0",
-    "tail.select": "^0.5.15"
+    "tail.select": "^0.5.15",
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "node --optimize_for_size --max-old-space-size=6000 --gc_interval=100 start.js",
     "prod": "node --optimize_for_size --max-old-space-size=6000 --gc_interval=100 app.js && node index.js",
     "test": "mocha",
     "bot": "node index.js",
-    "dev": "nodemon --optimize_for_size --max-old-space-size=6000 --gc_interval=100 app.js"
+    "dev": "nodemon --optimize_for_size --max-old-space-size=6000 --gc_interval=100 app.js",
+    "prepare": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "engines": {
     "node": "14.x"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
-  }
+  },
+  "snyk": true
 }
